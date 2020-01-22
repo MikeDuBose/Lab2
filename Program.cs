@@ -51,6 +51,7 @@ namespace Lab2
                 doMath(i);
                 i++;
             }
+            proceed();
 
         }
 
@@ -61,6 +62,22 @@ namespace Lab2
             double cubed = number * number * number;
             //Prints out the numbers as they are calculated.
             Console.WriteLine($"{number, 13} \t {squared, 13} \t \t {cubed, 13}");
+        }
+
+        private static void proceed()
+        {
+            Console.Write("Would you like to proceed?  Y/N:  ");
+            string response = Console.ReadLine();
+            response = response.ToLower();
+            if (response == "y")
+            {
+                getInput();
+            }
+            else
+            {
+                System.Environment.Exit(0);
+
+            }
         }
     }
 }
